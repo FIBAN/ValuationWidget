@@ -1,0 +1,13 @@
+#valuationWidget {
+    background-color: lightgray;
+    padding: 1em;
+    border: black;
+    border-style: solid;
+    border-radius: 0.5em;
+    display: inline-block;
+    color: black;
+}
+
+#valuationWidget li {
+    margin: 1em;
+}
