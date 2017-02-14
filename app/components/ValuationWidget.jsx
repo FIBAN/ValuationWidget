@@ -1,9 +1,8 @@
 import React from 'react';
-import {render} from 'react-dom';
-import ValuationInput from './ValuationInput.jsx';
-import ValuationDisplay from './ValuationDisplay.jsx';
+import ValuationInput from './ValuationInput';
+import ValuationDisplay from './ValuationDisplay';
 
-class App extends React.Component {
+class ValuationWidget extends React.Component {
 
   constructor(props) {
     super(props);
@@ -46,4 +45,4 @@ class App extends React.Component {
   }
 }
 
-render(<App/>, document.getElementById('valuationWidget'));
+export default ValuationWidget;
