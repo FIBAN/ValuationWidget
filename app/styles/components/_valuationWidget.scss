@@ -1,5 +1,12 @@
 .valuationWidget {
-    align-items: center;
     background-color: $widget-bg-color;
+    padding: 1em;
     border: 2px solid $widget-border-color;
+    border-radius: 0.5em;
+    display: inline-block;
+    color: black;
+}
+
+.valuationWidget li {
+    margin: 1em;
 }
