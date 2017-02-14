@@ -2,4 +2,16 @@ import React from 'react';
 import {render} from 'react-dom';
 import ValuationWidget from './components/ValuationWidget';
 
-render(<ValuationWidget/>, document.getElementById('valuationWidget'));
+// Load foundation
+require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css');
+$(document).foundation();
+
+// Load App css
+require('style-loader!css-loader!sass-loader!./styles/app.scss');
+
+render(
+  <div className="row">
+      <ValuationWidget/>
+  </div>,
+  document.getElementById('valuationWidget')
+);

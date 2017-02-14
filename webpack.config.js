@@ -5,7 +5,11 @@ var BUILD_DIR = path.resolve(__dirname, 'public');
 var APP_DIR = path.resolve(__dirname, 'app');
 
 var config = {
-  entry: APP_DIR + '/app.jsx',
+  entry: [
+    'script-loader!jquery/dist/jquery.min.js',
+    'script-loader!foundation-sites/dist/js/foundation.min.js',
+    APP_DIR + '/app.jsx'
+  ],
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js'

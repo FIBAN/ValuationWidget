@@ -34,7 +34,7 @@ class ValuationWidget extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="valuationWidget">
         <ValuationInput 
         	reqReturn={this.state.reqReturn}
         	entrySales={this.state.entrySales}
