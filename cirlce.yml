@@ -1,0 +1,6 @@
+deployment:
+  production:
+    branch: master
+    commands:
+      - npm run build
+      - aws s3 cp --recursive ./public/ s3://valuation-widget/
