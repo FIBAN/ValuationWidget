@@ -11,15 +11,25 @@ class ValuationWidget extends React.Component {
       entrySales: 0,
       salesMargin: 0,
       invPeriod: 0,
-      initInvest: 15
+      initInvest: 15000
 	};
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(param, value) {
-  	var state = {};
-	state[param] = value;
-	this.setState(state);
+  handleChange(
+    reqReturn,
+    entrySales,
+    salesMargin,
+    invPeriod,
+    initInvest
+  ) {
+    this.setState({ 
+      reqReturn: reqReturn,
+      entrySales: entrySales,
+      salesMargin: salesMargin,
+      invPeriod: invPeriod,
+      initInvest: initInvest
+    });
   }
 
   render () {

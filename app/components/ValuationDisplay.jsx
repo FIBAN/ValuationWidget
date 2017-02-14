@@ -25,8 +25,8 @@ class ValuationDisplay extends React.Component {
     return (
       <ul>
         <li>Required annual sales growth: {this.calculateRequiredAnnualGrowth().toFixed(2)}%</li>
-        <li>Corresponding sales at the end of investment period: {this.calculateSalesAtEndOfInvPeriod().toFixed(2)} k€</li>
-        <li>Firm value: {this.calculateFirmValue().toFixed(2)} k€</li>
+        <li>Corresponding sales at the end of investment period: {Math.round(this.calculateSalesAtEndOfInvPeriod())} €</li>
+        <li>Firm value: {Math.round(this.calculateFirmValue())} €</li>
       </ul>
     );
   }
