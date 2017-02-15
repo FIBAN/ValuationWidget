@@ -1,0 +1,26 @@
+.resultRow {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.resultItem {
+    text-align: center;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 33%;
+}
+
+// result value
+.resultItem span {
+    font-size: 1.5em;
+    margin: 5px;
+    white-space: nowrap;
+}
+
+// Result label
+.resultItem div {
+    color: $widget-result-label-color;
+}

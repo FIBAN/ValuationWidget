@@ -1,0 +1,31 @@
+.valuationInput table {
+    margin: auto;
+    text-align: center;
+}
+
+.inputRow td {
+    padding: 0.5em;
+}
+
+::-webkit-input-placeholder {
+   color: $widget-input-placeholder-color;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $widget-input-placeholder-color;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $widget-input-placeholder-color;  
+}
+
+:-ms-input-placeholder {  
+   color: $widget-input-placeholder-color;  
+}
+
+.valuationInput input {
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid $widget-input-underline-color;
+  outline: none;
+}

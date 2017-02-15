@@ -19,9 +19,9 @@ class ValuationInput extends React.Component {
 
   inputRow(id, label, value, ref) {
     return (
-      <tr>
+      <tr className="inputRow">
         <td><label htmlFor={id}>{label}</label></td>
-        <td><input id={id} type="number" value={value} onChange={this.handleChange} ref={ref} /></td>
+        <td><input id={id} type="number" step="any" value={value} onChange={this.handleChange} ref={ref} /></td>
       </tr>
       );
 
@@ -29,17 +29,19 @@ class ValuationInput extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <table>
-          <tbody>
-          {this.inputRow("reqReturn",     "Required return (%)",         this.props.reqReturn,   ((i) => this.reqReturn = i))}
-          {this.inputRow("entrySales",    "Entry sales (€)",             this.props.entrySales,  ((i) => this.entrySales = i))}
-          {this.inputRow("salesMargin",   "Sales margin of company (%)", this.props.salesMargin, ((i) => this.salesMargin = i))}
-          {this.inputRow("invPeriod",     "Investment period (years)",   this.props.invPeriod,   ((i) => this.invPeriod = i))}
-          {this.inputRow("initInvest",    "Initial investment (€)",      this.props.initInvest,  ((i) => this.initInvest = i))}
-          </tbody>
-        </table>
-       </form>
+      <div className="valuationInput">
+        <form onSubmit={this.handleSubmit}>
+          <table>
+            <tbody>
+            {this.inputRow("reqReturn",     "Required return (%)",         this.props.reqReturn,   ((i) => this.reqReturn = i))}
+            {this.inputRow("entrySales",    "Entry sales (€)",             this.props.entrySales,  ((i) => this.entrySales = i))}
+            {this.inputRow("salesMargin",   "Sales margin of company (%)", this.props.salesMargin, ((i) => this.salesMargin = i))}
+            {this.inputRow("invPeriod",     "Investment period (years)",   this.props.invPeriod,   ((i) => this.invPeriod = i))}
+            {this.inputRow("initInvest",    "Initial investment (€)",      this.props.initInvest,  ((i) => this.initInvest = i))}
+            </tbody>
+          </table>
+         </form>
+       </div>
     );
   }
 

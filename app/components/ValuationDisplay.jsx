@@ -21,13 +21,33 @@ class ValuationDisplay extends React.Component {
     return Math.pow((this.calculateSalesAtEndOfInvPeriod() / this.props.entrySales), (1 / this.props.invPeriod)) - 1
   }
 
+  printableValue(value) {
+    if (value == Number.POSITIVE_INFINITY || value == Number.NEGATIVE_INFINITY) {
+      return "∞";
+    } else if (isFinite(value)) {
+      return value.toLocaleString();
+    } else {
+      return "ERROR"
+    }
+
+  }
+
+  resultItem(label, value, symbol) {
+    return(
+          <div className="resultItem">
+            <span>{this.printableValue(value)} {symbol}</span>
+            <div>{label}</div>
+          </div>
+      );
+  }
+
   render() {
     return (
-      <ul>
-        <li>Required annual sales growth: {this.calculateRequiredAnnualGrowth().toFixed(2)}%</li>
-        <li>Corresponding sales at the end of investment period: {Math.round(this.calculateSalesAtEndOfInvPeriod())} €</li>
-        <li>Firm value: {Math.round(this.calculateFirmValue())} €</li>
-      </ul>
+      <div className="resultRow">
+          {this.resultItem("Required annual sales growth", this.calculateRequiredAnnualGrowth().toFixed(2), "%")}
+          {this.resultItem("Corresponding sales at the end of investment period", Math.round(this.calculateSalesAtEndOfInvPeriod()), "€")}
+          {this.resultItem("Firm value", Math.round(this.calculateFirmValue()), "€")}
+      </div>
     );
   }
 
