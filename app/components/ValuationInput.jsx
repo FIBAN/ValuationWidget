@@ -21,7 +21,7 @@ class ValuationInput extends React.Component {
     return (
       <tr className="inputRow">
         <td><label htmlFor={id}>{label}</label></td>
-        <td><input id={id} type="number" step="any" value={value} onChange={this.handleChange} ref={ref} /></td>
+        <td><input id={id} step="any" value={value} onChange={this.handleChange} ref={ref} /></td>
       </tr>
       );
 

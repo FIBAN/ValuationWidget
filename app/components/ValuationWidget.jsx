@@ -32,6 +32,14 @@ class ValuationWidget extends React.Component {
     });
   }
 
+  parseValue(value) {
+    if (isNaN(value)) {
+      return Number(String(value).replace(",", "."));
+    } else {
+      return value;
+    }
+  }
+
   render () {
     return (
       <div className="valuationWidget">
@@ -44,11 +52,11 @@ class ValuationWidget extends React.Component {
         	onChange={this.handleChange}
         	/>
         <ValuationDisplay 
-        	reqReturn={this.state.reqReturn}
-        	entrySales={this.state.entrySales}
-        	salesMargin={this.state.salesMargin}
-        	invPeriod={this.state.invPeriod}
-        	initInvest={this.state.initInvest}
+        	reqReturn={this.parseValue(this.state.reqReturn)}
+        	entrySales={this.parseValue(this.state.entrySales)}
+        	salesMargin={this.parseValue(this.state.salesMargin)}
+        	invPeriod={this.parseValue(this.state.invPeriod)}
+        	initInvest={this.parseValue(this.state.initInvest)}
         	/>
       </div>
     );
