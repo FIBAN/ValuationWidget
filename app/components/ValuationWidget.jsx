@@ -8,9 +8,9 @@ class ValuationWidget extends React.Component {
     super(props);
     this.state = { 
       reqReturn: 20,
-      entrySales: 0,
-      salesMargin: 0,
-      invPeriod: 0,
+      entrySales: 20000,
+      salesMargin: 40,
+      invPeriod: 6,
       initInvest: 15000
 	};
     this.handleChange = this.handleChange.bind(this);
