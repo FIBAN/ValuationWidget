@@ -1,10 +1,19 @@
 .valuationInput table {
     margin: auto;
-    text-align: center;
+    text-align: right;
 }
 
 .inputRow td {
     padding: 0.5em;
+}
+
+.inputCol {
+	display: flex;
+}
+
+.inputCol input {
+	flex-grow: 1;
+	margin: 0 0.5em;
 }
 
 ::-webkit-input-placeholder {
