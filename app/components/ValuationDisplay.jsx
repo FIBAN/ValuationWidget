@@ -44,7 +44,7 @@ class ValuationDisplay extends React.Component {
   render() {
     return (
       <div className="resultRow">
-          {this.resultItem("Required annual sales growth", this.calculateRequiredAnnualGrowth().toFixed(2), "%")}
+          {this.resultItem("Required annual sales growth", (this.calculateRequiredAnnualGrowth() * 100).toFixed(2), "%")}
           {this.resultItem("Corresponding sales at the end of investment period", Math.round(this.calculateSalesAtEndOfInvPeriod()), "€")}
           {this.resultItem("Firm value", Math.round(this.calculateFirmValue()), "€")}
       </div>
