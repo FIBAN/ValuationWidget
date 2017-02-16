@@ -2,15 +2,17 @@
     display: flex;
     flex-direction: row;
     padding: 5px;
+    flex-wrap: wrap;
 }
 
 .resultItem {
     text-align: center;
-    margin: 5px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     flex-basis: 33%;
+    box-sizing: border-box;
 }
 
 // result value

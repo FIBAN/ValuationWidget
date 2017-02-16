@@ -6,7 +6,7 @@
     border: 1.5px solid $widget-border-color;
     border-radius: 5px;
     display: inline-block;
-    color: black;
+    color: $widget-text-color;
     max-width: 30em;
     min-width: 10em;
     box-shadow: 4px 4px 7px 0px $widget-shadow-color;

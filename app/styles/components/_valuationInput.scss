@@ -9,6 +9,7 @@
 
 .inputCol {
 	display: flex;
+	min-width: 7em;
 }
 
 .inputCol input {
@@ -37,4 +38,10 @@
   background: transparent;
   border-bottom: 1px solid $widget-input-underline-color;
   outline: none;
+  width: 100%;
+}
+
+.valuationInput input:disabled {
+  border: none;
+  color: $widget-text-color;
 }
