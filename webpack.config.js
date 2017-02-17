@@ -6,8 +6,8 @@ var APP_DIR = path.resolve(__dirname, 'app');
 
 var config = {
   entry: [
-    'script-loader!jquery/dist/jquery.min.js',
-    'script-loader!foundation-sites/dist/js/foundation.min.js',
+    //'script-loader!jquery/dist/jquery.min.js',
+    //'script-loader!foundation-sites/dist/js/foundation.min.js',
     APP_DIR + '/app.jsx'
   ],
   output: {
