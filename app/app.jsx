@@ -8,5 +8,6 @@ import ValuationWidget from './components/ValuationWidget';
 
 // Load App css
 require('style-loader!css-loader!sass-loader!./styles/app.scss');
+require('style-loader!css-loader!../node_modules/react-select/dist/react-select.css')
 
 render(<ValuationWidget/>, document.getElementById('valuationWidget'));
