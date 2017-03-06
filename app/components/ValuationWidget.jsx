@@ -14,25 +14,11 @@ class ValuationWidget extends React.Component {
       invPeriod: 6,
       initInvest: 15000
 	};
-    this.handleChange = this.handleChange.bind(this);
+    this.onInputChange = this.onInputChange.bind(this);
   }
 
-  handleChange(
-    reqReturn,
-    entrySales,
-    yearsUntilSales,
-    salesMargin,
-    invPeriod,
-    initInvest
-  ) {
-    this.setState({ 
-      reqReturn: reqReturn,
-      entrySales: entrySales,
-      yearsUntilSales: yearsUntilSales,
-      salesMargin: salesMargin,
-      invPeriod: invPeriod,
-      initInvest: initInvest
-    });
+  onInputChange(input) {
+    this.setState(input);
   }
 
   parseValue(value) {
@@ -54,6 +40,7 @@ class ValuationWidget extends React.Component {
         	invPeriod={this.state.invPeriod}
         	initInvest={this.state.initInvest}
         	onChange={this.handleChange}
+          onInputChange={this.onInputChange}
         	/>
         <ValuationDisplay 
         	reqReturn={this.parseValue(this.state.reqReturn)}

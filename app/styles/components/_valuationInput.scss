@@ -4,7 +4,7 @@
 }
 
 .inputRow td {
-    padding: 0.5em;
+    padding: 1em 0.5em;
 }
 
 .inputCol {
@@ -14,7 +14,12 @@
 
 .inputCol input {
 	flex-grow: 1;
-	margin: 0 0.5em;
+}
+
+.inputCol span.inputUnit {
+  margin-left: 0.5em;
+  width: 5em;
+  text-align: left;
 }
 
 ::-webkit-input-placeholder {
