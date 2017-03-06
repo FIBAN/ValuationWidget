@@ -9,4 +9,6 @@ import ValuationWidget from './components/ValuationWidget';
 // Load App css
 require('style-loader!css-loader!sass-loader!./styles/app.scss');
 
+require('style-loader!css-loader!../node_modules/rc-slider/assets/index.css');
+
 render(<ValuationWidget/>, document.getElementById('valuationWidget'));

@@ -8,5 +8,8 @@ exports.calculateSalesAtEndOfInvPeriod = function(firmValue, salesMargin) {
 }
 
 exports.calculateRequiredAnnualGrowth = function(salesAtEndOfInvPeriod, entrySales, investmentPeriod, yearsUntilSales) {
-	return Math.pow((salesAtEndOfInvPeriod / entrySales), (1 / (investmentPeriod - yearsUntilSales))) - 1
+	return Math.pow(
+		(salesAtEndOfInvPeriod / entrySales),
+		(1 / (investmentPeriod - yearsUntilSales))
+	) - 1;
 }

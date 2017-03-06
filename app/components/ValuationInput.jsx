@@ -1,5 +1,6 @@
 import React from 'react';
-import Dropdown from 'react-dropdown'
+import Dropdown from 'react-dropdown';
+import Slider, { Range } from 'rc-slider';
 
 class ValuationInput extends React.Component {
 
@@ -14,7 +15,7 @@ class ValuationInput extends React.Component {
       this.entrySales.value,
       this.yearsUntilSales.value,
       this.salesMargin.value,
-      this.invPeriod.value,
+      this.invPeriod.getValue(),
       this.initInvest.value
     );
   }
@@ -46,6 +47,21 @@ class ValuationInput extends React.Component {
       );
   }
 
+  sliderInputRow(id, label, value, unit, ref, isDisabled) {
+    return (
+      <tr className="inputRow">
+        <td><label htmlFor={id}>{label + ":"}</label></td>
+        <td>
+          <div className="inputCol">
+            <Slider className={id} min={0} max={10} defaultValue={value} 
+            onChange={this.handleChange} 
+            disabled={isDisabled ? "disabled": null} ref={ref}/><span>{value + '\u00A0' + unit}</span>
+          </div>
+        </td>
+      </tr>
+      );
+  }
+
   render() {
     return (
       <div className="valuationInput">
@@ -56,7 +72,7 @@ class ValuationInput extends React.Component {
             {this.inputRow("entrySales",      "Entry sales",             this.props.entrySales,      "€",     ((i) => this.entrySales = i))}
             {this.inputRow("yearsUntilSales", "Years until sales",       this.props.yearsUntilSales, "years", ((i) => this.yearsUntilSales = i))}
             {this.inputRow("salesMargin",     "Sales margin of company", this.props.salesMargin,     "%",     ((i) => this.salesMargin = i))}
-            {this.inputRow("invPeriod",       "Investment period",       this.props.invPeriod,       "years", ((i) => this.invPeriod = i))}
+            {this.sliderInputRow("invPeriod",       "Investment period",       this.props.invPeriod,       "years", ((i) => this.invPeriod = i))}
             {this.inputRow("initInvest",      "Initial investment",      this.props.initInvest,      "€",     ((i) => this.initInvest = i))}
             </tbody>
           </table>
