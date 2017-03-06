@@ -26,9 +26,8 @@ class ValuationInput extends React.Component {
 
   textInputRow(id, value, opts) {
     return (
-      <tr className="inputRow">
-        <td><label htmlFor={id}>{opts.label + ":"}</label></td>
-        <td>
+      <div className="inputRow">
+        <div className="inputLabel"><label htmlFor={id}>{opts.label + ":"}</label></div>
           <div className="inputCol">
             <input 
               id={id} 
@@ -39,8 +38,7 @@ class ValuationInput extends React.Component {
             />
             <span className="inputUnit">{opts.unit}</span>
           </div>
-        </td>
-      </tr>
+      </div>
       );
   }
 
@@ -50,41 +48,33 @@ class ValuationInput extends React.Component {
     marks[opts.max] = opts.max;
 
     return (
-      <tr className="inputRow">
-        <td><label htmlFor={id}>{opts.label + ":"}</label></td>
-        <td>
-          <div className="inputCol">
-            <Slider 
-              min={opts.min} 
-              max={opts.max} 
-              defaultValue={value} 
-              onChange={e => this.onInputChange(id, e)} 
-              disabled={opts.disabled ? true: null}
-              marks={marks}
-            />
-            <span className="inputUnit">{value + '\u00A0' + opts.unit}</span>
-          </div>
-        </td>
-      </tr>
+      <div className="inputRow">
+        <div className="inputLabel"><label htmlFor={id}>{opts.label + ":"}</label></div>
+        <div className="inputCol">
+          <Slider 
+            min={opts.min} 
+            max={opts.max} 
+            defaultValue={value} 
+            onChange={e => this.onInputChange(id, e)} 
+            disabled={opts.disabled ? true: null}
+            marks={marks}
+          />
+          <span className="inputUnit">{value + '\u00A0' + opts.unit}</span>
+        </div>
+      </div>
       );
   }
 
   render() {
     return (
       <div className="valuationInput">
-        <form onSubmit={this.handleSubmit}>
-          <table>
-            <tbody>
-            {this.inputRow("slider",   "reqReturn",     this.props.reqReturn,       { label: "Required return", unit: "%", disabled: true, min: 0, max: 100 })}
-            {this.inputRow("text",   "entrySales",      this.props.entrySales,      { label: "Entry sales", unit: "€", min: 0, max: 10000000 })}
-            {this.inputRow("slider", "yearsUntilSales", this.props.yearsUntilSales, { label: "Years until sales", unit: "years", min: 0, max: this.props.invPeriod - 1 })}
-            {this.inputRow("slider",   "salesMargin",   this.props.salesMargin,     { label: "Sales margin of company", unit: "%", min: 0, max: 100 })}
-            {this.inputRow("slider", "invPeriod",       this.props.invPeriod,       { label: "Investment period", unit: "years", min: 1, max: 10 })}
-            {this.inputRow("text",   "initInvest",      this.props.initInvest,      { label: "Initial investment", unit: "€", min: 0, max: 10000000 })}
-            </tbody>
-          </table>
-         </form>
-       </div>
+          {this.inputRow("slider",   "reqReturn",     this.props.reqReturn,       { label: "Required return", unit: "%", disabled: true, min: 0, max: 100 })}
+          {this.inputRow("text",   "entrySales",      this.props.entrySales,      { label: "Entry sales", unit: "€", min: 0, max: 10000000 })}
+          {this.inputRow("slider", "yearsUntilSales", this.props.yearsUntilSales, { label: "Years until sales", unit: "years", min: 0, max: this.props.invPeriod - 1 })}
+          {this.inputRow("slider",   "salesMargin",   this.props.salesMargin,     { label: "Sales margin of company", unit: "%", min: 0, max: 100 })}
+          {this.inputRow("slider", "invPeriod",       this.props.invPeriod,       { label: "Investment period", unit: "years", min: 1, max: 10 })}
+          {this.inputRow("text",   "initInvest",      this.props.initInvest,      { label: "Initial investment", unit: "€", min: 0, max: 10000000 })}
+      </div>
     );
   }
 
