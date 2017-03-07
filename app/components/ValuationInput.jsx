@@ -28,7 +28,7 @@ class ValuationInput extends React.Component {
     return (
       <div className="inputRow">
         <div className="inputLabel"><label htmlFor={id}>{opts.label + ":"}</label></div>
-          <div className="inputCol">
+          <div className="inputCol textInputCol">
             <input 
               id={id} 
               step="any" 
@@ -50,7 +50,7 @@ class ValuationInput extends React.Component {
     return (
       <div className="inputRow">
         <div className="inputLabel"><label htmlFor={id}>{opts.label + ":"}</label></div>
-        <div className="inputCol">
+        <div className="inputCol sliderInputCol">
           <Slider 
             min={opts.min} 
             max={opts.max} 
@@ -69,11 +69,11 @@ class ValuationInput extends React.Component {
     return (
       <div className="valuationInput">
           {this.inputRow("slider",   "reqReturn",     this.props.reqReturn,       { label: "Required return", unit: "%", disabled: true, min: 0, max: 100 })}
-          {this.inputRow("text",   "entrySales",      this.props.entrySales,      { label: "Entry sales", unit: "€", min: 0, max: 10000000 })}
+          {this.inputRow("text",   "entrySales",      this.props.entrySales,      { label: "Entry sales", unit: "€" })}
           {this.inputRow("slider", "yearsUntilSales", this.props.yearsUntilSales, { label: "Years until sales", unit: "years", min: 0, max: this.props.invPeriod - 1 })}
           {this.inputRow("slider",   "salesMargin",   this.props.salesMargin,     { label: "Sales margin of company", unit: "%", min: 0, max: 100 })}
-          {this.inputRow("slider", "invPeriod",       this.props.invPeriod,       { label: "Investment period", unit: "years", min: 1, max: 10 })}
-          {this.inputRow("text",   "initInvest",      this.props.initInvest,      { label: "Initial investment", unit: "€", min: 0, max: 10000000 })}
+          {this.inputRow("slider", "invPeriod",       this.props.invPeriod,       { label: "Investment period", unit: "years", min: 1, max: 15 })}
+          {this.inputRow("text",   "initInvest",      this.props.initInvest,      { label: "Initial investment", unit: "€" })}
       </div>
     );
   }
