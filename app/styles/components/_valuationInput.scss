@@ -17,7 +17,7 @@
 }
 
 .inputLabel {
-    width: 50%;
+    width: 40%;
     text-align: right;
     padding-right: 10px;
     font-size: 12pt;
@@ -30,7 +30,7 @@
 .inputCol {
 	display: flex;
 	min-width: 7em;
-  width: 50%;
+  width: 60%;
   @media screen and (max-width: $break-small) {
     width: 100%;
   }
@@ -78,4 +78,16 @@
 
 .rc-slider {
   margin: 0 7px;
+}
+
+.rc-slider-dot-active {
+  border-color: $widget-input-underline-color;
+}
+
+.rc-slider-track {
+    background-color: $widget-input-underline-color;
+}
+
+.rc-slider-handle {
+    border-color: $widget-input-underline-color;
 }
